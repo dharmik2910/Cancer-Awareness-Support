@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cancer Awareness & Support</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="banner">
+    <div class="banner-overlay">
+      <h1>Cancer Awareness & Support</h1>
+      <p>Compassion. Information. Hope. We're in this together.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Our mission</h2>
+      <p>We provide resources, emotional support, and community connections for individuals and families affected by cancer. Learn, share, and find strength here.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="formFeedback" class="feedback" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="quotes">
+      <h2>Daily Quote</h2>
+      <div id="quoteBox" class="quoteBox">
+        <blockquote id="quoteText">Loading inspirational quote...</blockquote>
+        <cite id="quoteAuthor"></cite>
+      </div>
+      <div class="quoteControls">
+        <button id="newQuote">New Quote</button>
+        <small>Quotes update every 15 seconds.</small>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Cancer Awareness & Support — Built with care.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
