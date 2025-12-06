@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="banner">
     <div class="banner-overlay">
       <h1>Cancer Awareness & Support</h1>
@@ -14,7 +15,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main id="main" class="container" role="main">
     <section class="intro">
       <h2>Our mission</h2>
       <p>We provide resources, emotional support, and community connections for individuals and families affected by cancer. Learn, share, and find strength here.</p>
@@ -23,29 +24,42 @@
     <section class="contact">
       <h2>Contact Us</h2>
       <form id="contactForm" novalidate>
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" placeholder="Your name" required />
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+          <small class="field-error" id="nameError" aria-live="polite"></small>
+        </div>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <small class="field-error" id="emailError" aria-live="polite"></small>
+        </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+          <small class="field-hint" id="charCount">0 / 500 characters</small>
+          <small class="field-error" id="messageError" aria-live="polite"></small>
+        </div>
 
-        <button type="submit">Send Message</button>
-        <p id="formFeedback" class="feedback" aria-live="polite"></p>
+        <button type="submit" class="btn primary">Send Message</button>
+        <p id="formFeedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
       </form>
     </section>
 
     <section class="quotes">
       <h2>Daily Quote</h2>
       <div id="quoteBox" class="quoteBox">
-        <blockquote id="quoteText">Loading inspirational quote...</blockquote>
-        <cite id="quoteAuthor"></cite>
+        <div id="quoteContent" class="quoteContent">
+          <blockquote id="quoteText">Loading inspirational quote...</blockquote>
+          <cite id="quoteAuthor"></cite>
+        </div>
       </div>
       <div class="quoteControls">
-        <button id="newQuote">New Quote</button>
-        <small>Quotes update every 15 seconds.</small>
+        <button id="newQuote" type="button" class="btn">New Quote</button>
+        <button id="toggleAuto" type="button" class="btn" aria-pressed="false">Pause</button>
+        <small><span id="quoteIntervalText">Quotes update every 15 seconds.</span></small>
       </div>
     </section>
 
@@ -54,6 +68,9 @@
   <footer class="footer">
     <p>&copy; <span id="year"></span> Cancer Awareness & Support — Built with care.</p>
   </footer>
+
+  <!-- toast for confirmations (used by script.js); keeps UI visible on Netlify too -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" style="display:none"></div>
 
   <script src="script.js"></script>
 </body>
