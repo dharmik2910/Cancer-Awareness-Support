@@ -9,7 +9,7 @@ Files
 - `styles.css` — responsive styling and theme variables.
 - `script.js` — client-side behavior for form validation, quotes, newsletter handling, FAQ interactions, and small UI helpers (toast, smooth-scroll).
 
-Key features (recent updates)
+Key features 
 - Newsletter: now displayed as a white card (`.newsletter`) with a coral CTA button for strong contrast.
 - Quote system: attempts multiple public APIs (`quotable.io`, `zenquotes.io`, `goprogram.ai`) with a local fallback. Quotes auto-rotate every ~15s; users can pause/resume, request a new quote with the "New Quote" button or press the `n` key.
 - FAQ: full-width, single-column presentation with an **Accordion** toggle (`#faqAccordionToggle`) — when enabled, opening one FAQ closes others. The toggle preference is saved to `localStorage`.
