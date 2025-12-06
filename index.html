@@ -16,53 +16,123 @@
   </header>
 
   <main id="main" class="container" role="main">
-    <section class="intro">
-      <h2>Our mission</h2>
-      <p>We provide resources, emotional support, and community connections for individuals and families affected by cancer. Learn, share, and find strength here.</p>
-    </section>
-
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <form id="contactForm" novalidate>
-        <div class="form-group">
-          <label for="name">Name <span class="required">*</span></label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-          <small class="field-error" id="nameError" aria-live="polite"></small>
+    <!-- Left Column: Main Content -->
+    <div class="main-content">
+      <section class="intro">
+        <h2>Our mission</h2>
+        <p>We provide resources, emotional support, and community connections for individuals and families affected by cancer. Learn, share, and find strength here.</p>
+        <div class="mission-box" aria-label="Mission highlights">
+          <div class="mission-item">
+            <span class="mi-icon" aria-hidden="true">
+              <!-- people icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM8 11c1.657 0 3-1.343 3-3S9.657 5 8 5 5 6.343 5 8s1.343 3 3 3z" stroke="#16a085" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M2 20c0-2.209 1.791-4 4-4h12c2.209 0 4 1.791 4 4" stroke="#16a085" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </span>
+            <div>
+              <strong>2,000+</strong>
+              <span>People Supported</span>
+            </div>
+          </div>
+          <div class="mission-item">
+            <span class="mi-icon" aria-hidden="true">
+              <!-- phone icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.12.97.37 1.92.74 2.82a2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l1.26-1.26a2 2 0 0 1 2.11-.45c.9.37 1.85.62 2.82.74A2 2 0 0 1 22 16.92z" stroke="#e74c3c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>24/7</strong>
+              <span>Helpline</span>
+            </div>
+          </div>
+          <div class="mission-item">
+            <span class="mi-icon" aria-hidden="true">
+              <!-- gift/support icon -->
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7" stroke="#16a085" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12V3" stroke="#e74c3c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7h10" stroke="#e74c3c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Free</strong>
+              <span>Resources &amp; Support</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="form-group">
-          <label for="email">Email <span class="required">*</span></label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
-          <small class="field-error" id="emailError" aria-live="polite"></small>
+      <section class="quotes">
+        <h2>Daily Quote</h2>
+        <div id="quoteBox" class="quoteBox">
+          <div id="quoteContent" class="quoteContent">
+            <blockquote id="quoteText">Loading inspirational quote...</blockquote>
+            <cite id="quoteAuthor"></cite>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="message">Message <span class="required">*</span></label>
-          <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
-          <small class="field-hint" id="charCount">0 / 500 characters</small>
-          <small class="field-error" id="messageError" aria-live="polite"></small>
+        <div class="quoteControls">
+          <button id="newQuote" type="button" class="btn">New Quote</button>
+          <button id="toggleAuto" type="button" class="btn" aria-pressed="false">Pause</button>
+          <small><span id="quoteIntervalText">Quotes update every 15 seconds.</span></small>
         </div>
+      </section>
 
-        <button type="submit" class="btn primary">Send Message</button>
-        <p id="formFeedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
-      </form>
-    </section>
+      <section class="newsletter" aria-labelledby="newsletterHeading">
+        <h2 id="newsletterHeading">Stay Connected</h2>
+        <p class="newsletter-text">Sign up for weekly updates, resources, and inspiring stories.</p>
+        <form id="newsletterForm" class="newsletter-form" aria-label="Newsletter subscription">
+          <label for="newsletterEmail" class="visually-hidden">Email address</label>
+          <input id="newsletterEmail" name="newsletterEmail" type="email" placeholder="your@email.com" required />
+          <button type="submit" class="btn primary">Subscribe</button>
+        </form>
+      </section>
 
-    <section class="quotes">
-      <h2>Daily Quote</h2>
-      <div id="quoteBox" class="quoteBox">
-        <div id="quoteContent" class="quoteContent">
-          <blockquote id="quoteText">Loading inspirational quote...</blockquote>
-          <cite id="quoteAuthor"></cite>
+      <!-- FAQ Section -->
+      <section class="faq-section" aria-labelledby="faqHeading">
+        <h2 id="faqHeading">Frequently Asked Questions</h2>
+        <div class="faq-items">
+          <details class="faq-item">
+            <summary class="faq-question">How can I access support services?</summary>
+            <p class="faq-answer">You can reach our helpline 24/7 at 1-800-CARE-123 or use the contact form. We're here to listen and connect you with resources tailored to your needs.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Are the resources free to use?</summary>
+            <p class="faq-answer">Yes! All our support services and educational resources are completely free. We believe everyone should have access to quality care information and emotional support.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Can I volunteer with your organization?</summary>
+            <p class="faq-answer">Absolutely. We welcome volunteers in many capacities. Contact us to learn about volunteer opportunities that match your skills and availability.</p>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">How is my privacy protected?</summary>
+            <p class="faq-answer">Your privacy is our priority. All conversations are confidential and handled with care. We never share personal information without consent.</p>
+          </details>
         </div>
-      </div>
-      <div class="quoteControls">
-        <button id="newQuote" type="button" class="btn">New Quote</button>
-        <button id="toggleAuto" type="button" class="btn" aria-pressed="false">Pause</button>
-        <small><span id="quoteIntervalText">Quotes update every 15 seconds.</span></small>
-      </div>
-    </section>
+      </section>
+    </div>
 
+    <!-- Right Column: Sidebar -->
+    <aside class="sidebar">
+      <section class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name <span class="required">*</span></label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+            <small class="field-error" id="nameError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            <small class="field-error" id="emailError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+            <small class="field-hint" id="charCount">0 / 500 characters</small>
+            <small class="field-error" id="messageError" aria-live="polite"></small>
+          </div>
+
+          <button type="submit" class="btn primary">Send Message</button>
+          <p id="formFeedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
+        </form>
+      </section>
+    </aside>
   </main>
 
   <footer class="footer">

@@ -329,4 +329,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // initial fetch + start auto rotate
   setTimeout(fetchQuote, 100);
   startAutoRotate();
+
+  // Newsletter form handling
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterEmail = document.getElementById('newsletterEmail');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = newsletterEmail.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        showToast('Please enter a valid email address');
+        return;
+      }
+      showToast('Thanks — you are subscribed!');
+      newsletterForm.reset();
+    });
+  }
+
+  // FAQ interactions
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', (e) => {
+      if (e.target.open) {
+        e.target.querySelectorAll('p').forEach(p => {
+          p.style.animation = 'slideDown 0.3s ease';
+        });
+      }
+    });
+  });
 });
