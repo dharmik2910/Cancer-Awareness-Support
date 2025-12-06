@@ -25,7 +25,7 @@ python --version
 
 2. Open `cmd.exe` and navigate to the project folder (example path for this workspace):
 ```cmd
-cd /d "C:\Users\Dharmik\Downloads\Cancer Awareness & Support"
+cd /d "C:\Users\Dharmik\Cancer Awareness & Support"
 ```
 
 3. Start the local static server:
