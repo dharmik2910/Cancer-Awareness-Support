@@ -50,9 +50,6 @@ Notes & limitations
 - This is a front-end demo. The contact and newsletter forms do not post to a real server — integrate a backend or form provider (e.g., Netlify Forms, EmailJS) if you want real submissions.
 - The quote fetcher accesses third-party APIs; depending on CORS and network connectivity some APIs may be unavailable. The script uses multiple endpoints and falls back to a local set of quotes.
 
-Contributing
-- Edit `index.html`, `styles.css`, or `script.js` and refresh the browser to preview changes.
-- Keep styles in `styles.css` and behavior in `script.js` for clarity.
 
 License
 - This project is provided as-is for demonstration and learning purposes.
