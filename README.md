@@ -3,7 +3,7 @@
 What this is
 - A simple static landing page (HTML/CSS/JS) demonstrating a Cancer Awareness & Support page.
 - Modernized UI/UX with a two-column responsive layout, mission highlights, newsletter, FAQ, Daily Quote widget, and a contact form.
-demo: "https://cancerawarenessandsupport.netlify.app
+  **Live**: https://cancerawarenessandsupport.netlify.app
 
 Files
 - `index.html` — landing page with banner, mission highlights, FAQ, contact form, newsletter, and quote section.
